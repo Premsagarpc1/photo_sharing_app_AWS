@@ -9,7 +9,7 @@ def lambda_handler(event, context):
     file_name = event ["queryStringParameters"]["file"]
     fileObj = s3.get_object(Bucket=bucket_name, Key=file_name)
     file_content = fileObj["Body"].read()
-    # print
+   
     return {
         "statusCode": 200,
         "headers": {
